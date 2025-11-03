@@ -25,6 +25,12 @@
     },
     "Direccion": {
       "type": "text"
+    },
+    "facturas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::factura.factura",
+      "mappedBy": "cliente"
     }
   }
 }

@@ -446,6 +446,7 @@ export interface ApiClienteCliente extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Direccion: Schema.Attribute.Text;
+    facturas: Schema.Attribute.Relation<'oneToMany', 'api::factura.factura'>;
     Identificacion: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -506,6 +507,7 @@ export interface ApiFacturaFactura extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    cliente: Schema.Attribute.Relation<'manyToOne', 'api::cliente.cliente'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -513,6 +515,7 @@ export interface ApiFacturaFactura extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::detalle-factura.detalle-factura'
     >;
+    Fecha_de_Compra: Schema.Attribute.Date;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -520,6 +523,9 @@ export interface ApiFacturaFactura extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    SubTotal: Schema.Attribute.Decimal;
+    Total_General: Schema.Attribute.Decimal;
+    Total_Impuesto: Schema.Attribute.Decimal;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

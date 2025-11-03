@@ -16,6 +16,24 @@
       "relation": "oneToMany",
       "target": "api::detalle-factura.detalle-factura",
       "mappedBy": "factura"
+    },
+    "cliente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::cliente.cliente",
+      "inversedBy": "facturas"
+    },
+    "Fecha_de_Compra": {
+      "type": "date"
+    },
+    "SubTotal": {
+      "type": "decimal"
+    },
+    "Total_Impuesto": {
+      "type": "decimal"
+    },
+    "Total_General": {
+      "type": "decimal"
     }
   }
 }
