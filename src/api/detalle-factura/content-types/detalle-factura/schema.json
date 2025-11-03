@@ -10,5 +10,27 @@
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "producto": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::producto.producto",
+      "inversedBy": "detalle_facturas"
+    },
+    "Cantidad": {
+      "type": "biginteger"
+    },
+    "Precio_Unitario_Venta": {
+      "type": "decimal"
+    },
+    "SubTotal_Linea": {
+      "type": "decimal"
+    },
+    "factura": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::factura.factura",
+      "inversedBy": "detalle_facturas"
+    }
+  }
 }

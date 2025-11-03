@@ -474,16 +474,21 @@ export interface ApiDetalleFacturaDetalleFactura
     draftAndPublish: true;
   };
   attributes: {
+    Cantidad: Schema.Attribute.BigInteger;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    factura: Schema.Attribute.Relation<'manyToOne', 'api::factura.factura'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::detalle-factura.detalle-factura'
     > &
       Schema.Attribute.Private;
+    Precio_Unitario_Venta: Schema.Attribute.Decimal;
+    producto: Schema.Attribute.Relation<'manyToOne', 'api::producto.producto'>;
     publishedAt: Schema.Attribute.DateTime;
+    SubTotal_Linea: Schema.Attribute.Decimal;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -504,6 +509,10 @@ export interface ApiFacturaFactura extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    detalle_facturas: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::detalle-factura.detalle-factura'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -531,13 +540,21 @@ export interface ApiProductoProducto extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Descripcion: Schema.Attribute.Text;
+    detalle_facturas: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::detalle-factura.detalle-factura'
+    >;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::producto.producto'
     > &
       Schema.Attribute.Private;
+    Nombre: Schema.Attribute.Text;
+    Precio_Unitario: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
+    Stock: Schema.Attribute.BigInteger;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

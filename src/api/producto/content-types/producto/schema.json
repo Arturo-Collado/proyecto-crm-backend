@@ -10,5 +10,24 @@
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "Nombre": {
+      "type": "text"
+    },
+    "Descripcion": {
+      "type": "text"
+    },
+    "Precio_Unitario": {
+      "type": "decimal"
+    },
+    "Stock": {
+      "type": "biginteger"
+    },
+    "detalle_facturas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::detalle-factura.detalle-factura",
+      "mappedBy": "producto"
+    }
+  }
 }
