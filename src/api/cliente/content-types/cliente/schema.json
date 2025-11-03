@@ -10,5 +10,21 @@
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "Nombre": {
+      "type": "text"
+    },
+    "Correo": {
+      "type": "text"
+    },
+    "Telefono": {
+      "type": "biginteger"
+    },
+    "Identificacion": {
+      "type": "text"
+    },
+    "Direccion": {
+      "type": "text"
+    }
+  }
 }

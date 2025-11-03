@@ -441,16 +441,21 @@ export interface ApiClienteCliente extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    Correo: Schema.Attribute.Text;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    Direccion: Schema.Attribute.Text;
+    Identificacion: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::cliente.cliente'
     > &
       Schema.Attribute.Private;
+    Nombre: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
+    Telefono: Schema.Attribute.BigInteger;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
