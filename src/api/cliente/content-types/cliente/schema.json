@@ -17,9 +17,6 @@
     "Correo": {
       "type": "text"
     },
-    "Telefono": {
-      "type": "biginteger"
-    },
     "Identificacion": {
       "type": "text"
     },
@@ -31,6 +28,9 @@
       "relation": "oneToMany",
       "target": "api::factura.factura",
       "mappedBy": "cliente"
+    },
+    "Telefono": {
+      "type": "string"
     }
   }
 }

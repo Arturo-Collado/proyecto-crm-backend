@@ -456,7 +456,7 @@ export interface ApiClienteCliente extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     Nombre: Schema.Attribute.Text;
     publishedAt: Schema.Attribute.DateTime;
-    Telefono: Schema.Attribute.BigInteger;
+    Telefono: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
