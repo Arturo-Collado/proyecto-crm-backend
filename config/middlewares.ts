@@ -2,7 +2,20 @@ export default [
   'strapi::logger',
   'strapi::errors',
   'strapi::security',
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      enabled: true,
+      headers: '*',
+      origin: [
+        'http://localhost:3000',
+        'http://localhost:1337',
+        'http://192.168.1.22:3000',
+        'https://proyecto-crm-frontend.onrender.com', // <--- TU FRONTEND
+        'https://proyecto-crm-backend.onrender.com',  // <--- TU BACKEND
+      ],
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
