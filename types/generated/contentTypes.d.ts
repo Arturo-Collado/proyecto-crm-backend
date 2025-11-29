@@ -508,6 +508,7 @@ export interface ApiFacturaFactura extends Struct.CollectionTypeSchema {
   };
   attributes: {
     cliente: Schema.Attribute.Relation<'manyToOne', 'api::cliente.cliente'>;
+    Codigo: Schema.Attribute.String & Schema.Attribute.Unique;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
